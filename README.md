@@ -9,7 +9,7 @@
   - [Overview](#overview)
     - [Features](#features)
     - [Dependencies](#dependencies)
-  - [Repository structure:](#repository-structure)
+  - [Repository structure](#repository-structure)
   - [How to run](#how-to-run)
   - [How to run by docker compose](#how-to-run-by-docker-compose)
   - [How to test](#how-to-test)
