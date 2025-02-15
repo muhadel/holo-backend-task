@@ -80,7 +80,7 @@ This project provides an API for managing voucher pools, allowing customers to u
 # Set up the environment variables
 cp .env.example .env
 
-# Install depencies
+# Install dependencies
 yarn
 
 # Development mode
