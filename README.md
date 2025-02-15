@@ -8,10 +8,6 @@
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
     - [Features](#features)
-    - [**1. Customer Management**](#1-customer-management)
-    - [**2. Special Offer Management**](#2-special-offer-management)
-    - [**3. Voucher Management**](#3-voucher-management)
-    - [**4. OpenAPI Documentation**](#4-openapi-documentation)
     - [Dependencies](#dependencies)
   - [Repository structure:](#repository-structure)
   - [How to run](#how-to-run)
@@ -82,7 +78,7 @@ This project provides an API for managing voucher pools, allowing customers to u
 
 ```bash
 # Set up the environment variables
-mv .env.example .env
+cp .env.example .env
 
 # Install depencies
 yarn
@@ -115,5 +111,5 @@ You can access Swagger documentation on [http://localhost:3000/api-docs/](http:/
 ## ERD
 
 <p align="center">
-  <img src="https://github.ibm.com/Mohamed-Adel-Mohamed-Ali/main-repo/assets/380836/95d8e427-1b89-4247-90e0-d7de70e42b4e" width="200">
+  <img src="https://github.com/user-attachments/assets/4ce97947-68ed-4332-8c3c-8fafeef464cd" width="200">
 </p>
