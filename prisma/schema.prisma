@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// generator erd {
+//   provider                  = "prisma-erd-generator"
+//   theme                     = "default"
+//   disableEmoji              = true
+//   includeRelationFromFields = true
+// }
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  id        String    @id @default(uuid())
+  name      String
+  email     String    @unique
+  vouchers  Voucher[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model SpecialOffer {
+  id                 String    @id @default(uuid())
+  name               String
+  discountPercentage Float
+  vouchers           Voucher[]
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+model Voucher {
+  id             String       @id @default(uuid())
+  code           String       @unique
+  expirationDate DateTime
+  usedAt         DateTime?
+  customer       Customer?    @relation(fields: [customerId], references: [id])
+  customerId     String?
+  specialOffer   SpecialOffer @relation(fields: [specialOfferId], references: [id])
+  specialOfferId String
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
